@@ -55,7 +55,7 @@ router.get("/logout", (req, res, next) => {
       return next(err);  // Pass error to Express error handler
     }
     req.session.destroy(() => {
-      res.redirect(CLIENT_LOGIN_URL);
+      res.redirect(CLIENT_URL);
     });
   });
 });
