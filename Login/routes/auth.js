@@ -3,6 +3,8 @@ const passport = require("passport");
 
 //const CLIENT_URL = "http://localhost:5173/";
 const CLIENT_URL = "https://margentai.netlify.app/";
+const CLIENT_LOGIN_URL = CLIENT_URL + '/login';
+
 
 
 router.get("/login/success", (req, res) => {
@@ -53,7 +55,7 @@ router.get("/logout", (req, res, next) => {
       return next(err);  // Pass error to Express error handler
     }
     req.session.destroy(() => {
-      res.redirect(CLIENT_URL);
+      res.redirect(CLIENT_LOGIN_URL);
     });
   });
 });
