@@ -24,8 +24,7 @@ passport.use(
       //callbackURL: "https://margentai.netlify.app/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) =>{
-      console.log("Google Profile:", profile);  // Debugging
-
+      
       const user = {
           id: profile.id,
           name: profile.displayName,
@@ -76,19 +75,20 @@ passport.use(
 // Required if using sessions
 
 passport.serializeUser((user, done) => {
-  console.log("Serializing User:", user); 
+  console.log("🔄 No user serializing User:");
+  if(user){
+    console.log("Serializing User:",); }
   done(null, user);
 });
 
 passport.deserializeUser((user, done) => {
-  console.log("🔄 Deserializing User:", user);
+  console.log("🔄 Deserializing User:");
 
- // if (!user) {
-  //  console.log("❌ No user found during deserialization!");
+ if (!user) {
+  console.log("❌ No user found during deserialization!");
   // return done(new Error("User not found"), null);
-  //}
+  }
 
-  console.log("✅ User successfully deserialized:", user);
   done(null, user);
 });
 
