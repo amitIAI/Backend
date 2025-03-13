@@ -20,7 +20,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL: "https://login-service-9qx5.onrender.com/auth/google/callback",
       //callbackURL: "https://margentai.netlify.app/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) =>{
