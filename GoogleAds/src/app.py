@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from controllers.campaign_controller import campaign_bp
 from controllers.customer_metrics_controller import customer_metrics_bp
@@ -6,6 +7,9 @@ from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__)
+
+PORT = int(os.getenv("PORT", 10000))  # Default to 10000 if not set
+app.run(host="0.0.0.0", port=PORT)
 
 CORS(app, resources={r"/*": {"origins": "https://margentai.netlify.app"}})
 

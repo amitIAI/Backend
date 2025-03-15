@@ -11,6 +11,7 @@ google-auth-oauthlib==0.5.1
 googleapis-common-protos==1.56.0
 grpcio==1.44.0
 grpcio-status==1.44.0
+gunicorn
 httpretty==0.8.10
 idna==3.3
 isodate==0.6.1
