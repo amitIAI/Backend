@@ -3,7 +3,6 @@ const passport = require("passport");
 
 //const CLIENT_URL = "http://localhost:5173/";
 const CLIENT_URL = "https://margentai.netlify.app/";
-const CLIENT_LOGIN_URL = CLIENT_URL + '/login';
 
 
 
