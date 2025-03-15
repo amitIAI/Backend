@@ -1,8 +1,9 @@
 const router = require("express").Router();
 const passport = require("passport");
 
-//const CLIENT_URL = "http://localhost:5173/";
-const CLIENT_URL = "https://margentai.netlify.app/";
+const CLIENT_URL = "http://localhost:5173/";
+//const CLIENT_URL = "https://margentai.netlify.app/";
+
 
 
 router.get("/login/success", (req, res) => {

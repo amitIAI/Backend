@@ -21,7 +21,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   // for localhost 
-  cookie: {  maxAge: 24 * 60 * 60 * 1000, secure: true, sameSite: "none"  }  // Set `true` if using HTTPS
+  //cookie: {  maxAge: 24 * 60 * 60 * 1000, secure: true, sameSite: "none"  }
+  cookie: {  maxAge: 24 * 60 * 60 * 1000  }  // Set `true` if using HTTPS
   /*
   cookie:{
     maxAge: 24 * 60 * 60 * 1000,
@@ -57,8 +58,8 @@ app.use(passport.session());
 
 app.use(
   cors({
-    //origin: "http://localhost:5173",
-    origin: "https://margentai.netlify.app",
+    origin: "http://localhost:5173",
+    //origin: "https://margentai.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
