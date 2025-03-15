@@ -6,7 +6,7 @@ certifi==2021.10.8
 charset-normalizer==2.0.12
 Cython
 google-ads==25.2.0
-google-api-core==2.7.1
+google-api-core>=2.8.0
 google-auth==1.35.0
 google-auth-oauthlib==0.5.1
 googleapis-common-protos==1.56.0
