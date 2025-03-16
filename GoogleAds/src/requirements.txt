@@ -4,13 +4,14 @@ cached-property
 cachetools
 certifi
 charset-normalizer
-google-ads==25.2.0
+google-ads>=25.2.0
 google-api-core
 google-auth
 google-auth-oauthlib
 googleapis-common-protos
 grpcio
 grpcio-status
+gunicorn
 httpretty
 idna
 isodate
