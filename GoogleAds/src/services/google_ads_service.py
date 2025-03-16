@@ -1,4 +1,5 @@
-import pandas as pd
+import os
+from dotenv import load_dotenv
 from google.ads.googleads.client import GoogleAdsClient
 from utils.generate_mock_metrics import generate_mock_metrics
 
@@ -6,7 +7,30 @@ from utils.generate_mock_metrics import generate_mock_metrics
 # client = GoogleAdsClient.load_from_storage(Config.GOOGLE_ADS_YAML_PATH, version="v19")
 def get_GoogleAdsClient():
     print("get_GoogleAdsClient")
-    client = GoogleAdsClient.load_from_storage(version="v19")
+
+    #    Replace in production
+    #########################################
+    load_dotenv(dotenv_path='./.env')
+
+    DEVELOPER_TOKEN = os.getenv("DEVELOPER_TOKEN")
+    CLIENT_ID = os.getenv("CLIENT_ID")
+    CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+    REFRESH_TOKEN = os.getenv("REFRESH_TOKEN")
+    MCC_ID = os.getenv("MCC_ID")
+    
+    config ={
+        "developer_token": DEVELOPER_TOKEN,
+        "client_id": CLIENT_ID,
+        "client_secret": CLIENT_SECRET,
+        "refresh_token": REFRESH_TOKEN,
+        "login_customer_id": MCC_ID,
+        "use_proto_plus" : True,
+    
+    }
+    #client = GoogleAdsClient.load_from_storage(version="v19")
+    ################################################################
+
+    client = GoogleAdsClient.load_from_dict(config, version="v19")
     
     print("YES CLIENT")
     return (client)
