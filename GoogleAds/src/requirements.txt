@@ -18,6 +18,7 @@ isodate
 lxml
 mock
 oauthlib
+pandas
 platformdirs
 proto-plus
 protobuf
