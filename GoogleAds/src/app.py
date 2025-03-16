@@ -8,8 +8,8 @@ from flask_cors import CORS
 # Initialize Flask app
 app = Flask(__name__)
 
-PORT = int(os.getenv("PORT", 10000))  # Default to 10000 if not set
-app.run(host="0.0.0.0", port=PORT)
+PORT = int(os.getenv("PORT", 5001))  # Default to 5001 if not set
+
 
 CORS(app, resources={r"/*": {"origins": "https://margentai.netlify.app"}})
 
@@ -20,4 +20,5 @@ app.register_blueprint(all_keywords_bp)
 
 # Run the Flask app
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, host="0.0.0.0", port=PORT)
+    #app.run(debug=True, port=5001)
