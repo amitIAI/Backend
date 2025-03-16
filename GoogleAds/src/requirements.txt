@@ -39,3 +39,4 @@ xmltodict
 zeep
 python-dotenv
 Flask
+flask_cors
